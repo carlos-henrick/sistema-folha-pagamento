@@ -72,6 +72,7 @@ public class Main {
                                 funcionarios[indice][1] = Input.nextLine();
                             }
                             funcionarios[indice][2] = salario;
+                            funcionarios[indice][7] = "COMISSIONADO";
                             System.out.println("Deseja fazer mais um cadastro?");
                             System.out.println("(1)Sim");
                             System.out.println("(2)Não");
@@ -138,6 +139,7 @@ public class Main {
                         x1 = Float.parseFloat(funcionarios[indice][2]);
                         x = CalSalario(x, x1);
                         funcionarios[indice][6] = String.valueOf(x);
+                        funcionarios[indice][7] = "COMISSIONADO";
                         System.out.println("Deseja fazer mais um cadastro?");
                         System.out.println("(1)Sim");
                         System.out.println("(2)Não");
@@ -203,6 +205,7 @@ public class Main {
                         x1 = Float.parseFloat(funcionarios[indice][2]);
                         x = SomaSal(x, x1);
                         funcionarios[indice][6] = String.valueOf(x);
+                        funcionarios[indice][7] = "PRODUCAO";
                         System.out.println("Deseja fazer mais um cadastro?");
                         System.out.println("(1)Sim");
                         System.out.println("(2)Não");
@@ -231,26 +234,24 @@ public class Main {
                     }
                     System.out.println("Total de pessoas cadastradas: " + total);
                     System.out.println();
-
                     for (int i = 0; i < funcionarios.length; i++) {
                         if (funcionarios[i][0] != null) {
                             System.out.println("Nome: " + funcionarios[i][0]);
                             System.out.println("Matrícula: " + funcionarios[i][1]);
                             System.out.println("Salário Fixo: " + funcionarios[i][2]);
-                            if (funcionarios[i][5] != null) {
-                                System.out.println("Extras: " + funcionarios[i][5]);
-                            } else {
-                                System.out.println("Extras: 0");
-                            }
-                            if (funcionarios[i][6] != null) {
-                                System.out.println("Salário Final: " + funcionarios[i][6]);
-                            } else {
+                            if (funcionarios[i][7].equals("PADRAO")) {
+                                System.out.println("Extras: 0.0");
                                 System.out.println("Salário Final: " + funcionarios[i][2]);
+                            } else if (funcionarios[i][7].equals("COMISSIONADO")) {
+                                System.out.println("Comissão: " + funcionarios[i][5]);
+                                System.out.println("Salário Final: " + funcionarios[i][6]);
+                            } else if (funcionarios[i][7].equals("PRODUCAO")) {
+                                System.out.println("Produtividade: " + funcionarios[i][5]);
+                                System.out.println("Salário Final: " + funcionarios[i][6]);
                             }
                             System.out.println("----------------------------------");
                         }
                     }
-
                     break;
                 case 0:
                     saida = 0;
