@@ -8,6 +8,8 @@ public class Main {
     public static String[][] funcionarios = new String[99][10]; 
     public static int indice = 0;
 
+
+    //Funções do projeto
     public static int VerificarEspaco(String[][] funcionarios){
         for (i = 0; i < funcionarios.length; i++ ) {
             if (funcionarios[i][0] == null || funcionarios[i][0].equals("")){
@@ -29,7 +31,6 @@ public class Main {
     public static float SomaSal(float x, float x1){
         return x + x1;
     }
-
     public static void menu(){
         System.out.println("Menu\n");
         System.out.println("(1)Cadastrar Funcionário Padrão:");
@@ -40,17 +41,16 @@ public class Main {
         System.out.print("->");
     }
 
+    //Início do projeto
     public static void main(String[] args) {
         Scanner Input = new Scanner(System.in);
-
-        
         saida = 1;
-        
         while (saida == 1){
             menu();
             menu = Input.nextInt();
             Input.nextLine();
             switch (menu) {
+                //Cadastro de Funcionario Padrão 
                 case 1:
                     System.out.println("Cadastro de Funcionários\n");
                     indice = VerificarEspaco(funcionarios);
@@ -89,6 +89,7 @@ public class Main {
                             }
                     }
                     break;
+                //Cadastro de Funcionario Comissionado
                 case 2:
                     System.out.println("Cadastro de Funcionários Comissionado\n");
                     indice = VerificarEspaco(funcionarios);
@@ -157,6 +158,7 @@ public class Main {
 
                     }
                     break;
+                //Cadastro de Funcionario de Produção
                 case 3:
                     System.out.println("Cadastrar Funcionário Produção\n");
                     indice = VerificarEspaco(funcionarios);
@@ -223,6 +225,7 @@ public class Main {
                           
                     }
                     break;
+                //Gerar folha de pagamento
                 case 4:
 
                     System.out.println("\n========== FOLHA DE PAGAMENTO ==========\n");
@@ -253,6 +256,7 @@ public class Main {
                         }
                     }
                     break;
+                //Sair do Sistema
                 case 0:
                     saida = 0;
                     break;
