@@ -72,7 +72,7 @@ public class Main {
                                 funcionarios[indice][1] = Input.nextLine();
                             }
                             funcionarios[indice][2] = salario;
-                            funcionarios[indice][7] = "COMISSIONADO";
+                            funcionarios[indice][7] = "PADRAO";
                             System.out.println("Deseja fazer mais um cadastro?");
                             System.out.println("(1)Sim");
                             System.out.println("(2)Não");
