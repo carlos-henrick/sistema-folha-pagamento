@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class main {
 
     //Variáveis
     public static final String salario = "2000";
